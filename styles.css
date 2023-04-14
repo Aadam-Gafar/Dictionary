@@ -78,7 +78,7 @@ h1 {
 }
 
 #inactive {
-    opacity: 50%;
+    opacity: 25%;
 }
 
 #active {
@@ -86,8 +86,13 @@ h1 {
 }
 
 .wordClass:hover {
+    transition-duration: 0.5s;
     opacity: 100%;
     cursor: pointer;
+}
+
+.wordClass:not(hover) {
+    transition-duration: 0.5s;
 }
 
 #main {

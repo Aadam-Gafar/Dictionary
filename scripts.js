@@ -38,11 +38,14 @@ function displayDefinition(originElement, number) {
 }
 
 
-async function getDefinition(isDefault) {
+async function getDefinition(isDefault, wordIn) {
     // Reading user input
     var word = "";
     if (isDefault) {
         word = "dictionary";
+    }
+    else if (word != null) {
+        word = wordIn;
     }
     else {
         var word = document.getElementById("entry").value;
@@ -111,7 +114,7 @@ async function getDefinition(isDefault) {
         var synonyms = parsedData[0].meanings[0].synonyms;
         var html = "";
         for (var i = 0; i < synonyms.length; i++) {
-            html += "<span id='pill'>" + synonyms[i] + "</span>";
+            html += "<span id='pill' onclick='GetDefinition(false, " + synonyms[i] + ");'>" + synonyms[i] + "</span>";
         }
         document.getElementById("synonym").innerHTML = html;
 
