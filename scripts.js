@@ -69,6 +69,14 @@ async function getDefinition(isDefault) {
             html += "<span id='pill'>" + synonyms[i] + "</span>";
         }
         document.getElementById("synonym").innerHTML = html;
+
+        // Updating antonym HTML
+        var antonyms = parsedData[0].meanings[0].antonyms;
+        var html = "";
+        for (var i = 0; i < antonyms.length; i++) {
+            html += "<span id='pill'>" + antonyms[i] + "</span>";
+        }
+        document.getElementById("antonym").innerHTML = html;
     } catch {
         // Accounting for failed requests
         alert("404 (Not Found): no definition available.");

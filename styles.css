@@ -39,6 +39,7 @@ background: rgba(233, 235, 252, 1);
 }
 
 #search input {
+    height: 32px;
     font-size: 24px;
 
     border-radius: 15px;
@@ -91,6 +92,13 @@ h1 {
 }
 
 #synonymBox {
+    margin-top: 50px;
+    background: rgba(247, 248, 255, 1);
+    padding: 16px;
+    border-radius: 15px;
+}
+
+#antonymBox {
     margin-top: 50px;
     background: rgba(247, 248, 255, 1);
     padding: 16px;
