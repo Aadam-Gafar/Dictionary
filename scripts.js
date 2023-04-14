@@ -66,9 +66,9 @@ async function getDefinition(isDefault) {
         var synonyms = parsedData[0].meanings[0].synonyms;
         var html = "";
         for (var i = 0; i < synonyms.length; i++) {
-            html += "<li>" + synonyms[i] + "</li>";
+            html += "<span id='pill'>" + synonyms[i] + "</span>";
         }
-        document.getElementById("synonym").innerHTML = "<ul>" + html + "</ul>";
+        document.getElementById("synonym").innerHTML = html;
     } catch {
         // Accounting for failed requests
         alert("404 (Not Found): no definition available.");

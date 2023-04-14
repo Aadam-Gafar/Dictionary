@@ -1,14 +1,20 @@
 * {
 font-family: 'Work Sans', sans-serif;
+
+
 }
 
 body {
-    margin: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+background: rgba(233, 235, 252, 1);
 }
 
 #titleBar {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 #search {
@@ -28,12 +34,12 @@ body {
 }
 
 #search img {
-    height: 36px;
+    height: 24px;
     width: auto;
 }
 
 #search input {
-    font-size: 36px;
+    font-size: 24px;
 
     border-radius: 15px;
     border-width: 0px;
@@ -51,6 +57,7 @@ body {
 h1 {
     font-size: 64px;
     color: rgba(63, 82, 255, 1);
+    margin-top: 50px;
     margin-bottom: 0px;
 }
 
@@ -61,8 +68,49 @@ h1 {
 }
 
 #wordClass {
-    background-color: aliceblue;
+    background: rgba(247, 248, 255, 1);
     width: max-content;
     padding: 10px;
     border-radius: 15px;
+    color: rgba(63, 82, 255, 1);
+}
+
+#main {
+    display: flex;
+}
+
+#left {
+    width: 60%;
+    padding: 8px;
+}
+
+#right {
+    width: 40%;
+    padding: 8px;
+    overflow-wrap:break-word;
+}
+
+#synonymBox {
+    margin-top: 50px;
+    background: rgba(247, 248, 255, 1);
+    padding: 16px;
+    border-radius: 15px;
+}
+
+h2 {
+    color: rgba(63, 82, 255, 1);
+    margin-top: 0px;
+}
+
+#pill {
+    color: rgba(247, 248, 255, 1);
+    width: max-content;
+    padding: 10px;
+    border-radius: 15px;
+    background: rgba(63, 82, 255, 1);
+}
+
+span {
+    display: inline-block;
+    margin: 5px;
 }
