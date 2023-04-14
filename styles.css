@@ -68,7 +68,7 @@ h1 {
     margin-top: 0px;
 }
 
-#wordClass {
+.wordClass {
     background: rgba(247, 248, 255, 1);
     width: max-content;
     padding: 10px;
@@ -121,4 +121,12 @@ h2 {
 span {
     display: inline-block;
     margin: 5px;
+}
+
+#classBox {
+    width: 100%;
+}
+
+#dfn2 {
+    display: none;
 }

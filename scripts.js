@@ -11,6 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 getDefinition(true);
 
+function displayDefinition(number) {
+    number += 1;
+    var allDefinitions = document.querySelectorAll('[id*="dfn"]');
+    allDefinitions.forEach(element => {
+        if (element == document.getElementById("dfn" + number)) {
+            element.style.display = "block";
+        }
+        else {
+            element.style.display = "none";
+        }
+    });
+}
+
+
 async function getDefinition(isDefault) {
     // Reading user input
     var word = "";
@@ -50,17 +64,29 @@ async function getDefinition(isDefault) {
         document.getElementById("phonetics").innerHTML = html;
 
         // Updating class HTML
-        var wordClass = parsedData[0].meanings[0].partOfSpeech;
-        var html = wordClass;
-        document.getElementById("wordClass").innerHTML = html;
+        var meanings = parsedData[0].meanings;
+        var wordClass;
+        var html;
+        document.getElementById("definition").innerHTML = "";
+        document.getElementById("classBox").innerHTML = "";
+        for (var i = 0; i < meanings.length; i++) {
+            wordClass = meanings[i].partOfSpeech;
+            html = "<span class='wordClass' onclick='displayDefinition(" + i + ");'>" + wordClass + "</span>";
+            document.getElementById("classBox").innerHTML += html;
+        }
 
         // Updating definitions HTML
-        var definitions = parsedData[0].meanings[0].definitions;
+        var meanings = parsedData[0].meanings;
         var html = "";
-        for (var i = 0; i < definitions.length; i++) {
-            html += "<li>" + definitions[i].definition + "</li><br>";
+        for (var i = 0; i < meanings.length; i++) {
+            var definitions = meanings[i].definitions;
+            var defHtml = "";
+            for (var j = 0; j < definitions.length; j++) {
+                defHtml += "<li>" + definitions[j].definition + "</li><br>";
+            }
+            html += "<ol id='dfn" + (i + 1) + "'>" + defHtml + "</ol>";
         }
-        document.getElementById("definition").innerHTML = "<ol>" + html + "</ol>";
+        document.getElementById("definition").innerHTML = html;
 
         // Updating synonym HTML
         var synonyms = parsedData[0].meanings[0].synonyms;
