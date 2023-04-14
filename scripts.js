@@ -58,9 +58,9 @@ async function getDefinition(isDefault) {
         var definitions = parsedData[0].meanings[0].definitions;
         var html = "";
         for (var i = 0; i < definitions.length; i++) {
-            html += "<li>" + definitions[i].definition + "</li>";
+            html += "<li>" + definitions[i].definition + "</li><br>";
         }
-        document.getElementById("definition").innerHTML = "<ul>" + html + "</ul>";
+        document.getElementById("definition").innerHTML = "<ol>" + html + "</ol>";
 
         // Updating synonym HTML
         var synonyms = parsedData[0].meanings[0].synonyms;
