@@ -5,24 +5,49 @@
     <meta charset="UTF-8" />
     <title>Dictionary</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- <link rel="icon" href="favicon.png"> -->
+    <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Work+Sans:wght@300;600;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Dictionary</h1>
-    <label for="word">Enter a word:</label>
-    <input type="text" id="word">
-    <button onclick="getDefinition();">
-        Submit
-    </button>
+    <div id="titleBar">
+        <div id="search">
+            <input type="text" id="entry" title="Input for search terms." placeholder="Enter a word...">
+            <img id="submit" src="assets/search.png" alt="Search icon." onclick="getDefinition(false);">
+        </div>
+    </div>
 
-    <h2>
-        Definition
-    </h2>
-    <p id="definition">
-        Placeholder.
-    </p>
+    <div id="main">
+        <div id="left">
+            <h1 id="word"></h1>
+            <p id="phonetics"></p>
+            <hr>
+            <div id="classBox">
+
+            </div>
+
+            </h2>
+            <p id="definition"></p>
+        </div>
+
+        <div id="right">
+            <div id="synonymBox">
+                <h2>Synonyms</h2>
+                <div id="synonym"></div>
+            </div>
+
+            <div id="antonymBox">
+                <h2>Antonyms</h2>
+                <div id="antonym"></div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

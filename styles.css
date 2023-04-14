@@ -1,0 +1,172 @@
+* {
+font-family: 'Work Sans', sans-serif;
+
+
+}
+
+body {
+    margin-left: 25%;
+    margin-right: 25%;
+    
+background: rgba(233, 235, 252, 1);
+}
+
+#titleBar {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#search {
+    width: 750px;
+    background-color: rgba(247, 248, 255, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#search img {
+    height: 24px;
+    width: auto;
+}
+
+#search input {
+    height: 32px;
+    font-size: 24px;
+
+    border-radius: 15px;
+    border-width: 0px;
+    background-color: transparent;
+
+    flex-grow: 1;
+
+    margin-left: 10px;
+}
+
+#search input:focus {
+    outline: none;
+}
+
+h1 {
+    font-size: 64px;
+    color: rgba(63, 82, 255, 1);
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+#phonetics {
+    font-size: 32px;
+    color: rgba(63, 82, 255, 1);
+    margin-top: 0px;
+}
+
+.wordClass {
+    opacity: 50%;
+    background: rgba(247, 248, 255, 1);
+    width: max-content;
+    padding: 10px;
+    border-radius: 15px;
+    color: rgba(63, 82, 255, 1);
+}
+
+#inactive {
+    opacity: 50%;
+}
+
+#active {
+    opacity: 100%;
+}
+
+.wordClass:hover {
+    cursor: pointer;
+}
+
+#main {
+    display: flex;
+}
+
+#left {
+    width: 60%;
+    padding: 8px;
+}
+
+#right {
+    width: 40%;
+    padding: 8px;
+    overflow-wrap:break-word;
+}
+
+#synonymBox {
+    margin-top: 50px;
+    background: rgba(247, 248, 255, 1);
+    padding: 16px;
+    border-radius: 15px;
+}
+
+#antonymBox {
+    margin-top: 50px;
+    background: rgba(247, 248, 255, 1);
+    padding: 16px;
+    border-radius: 15px;
+}
+
+h2 {
+    color: rgba(63, 82, 255, 1);
+    margin-top: 0px;
+}
+
+#pill {
+    color: rgba(247, 248, 255, 1);
+    width: max-content;
+    padding: 10px;
+    border-radius: 15px;
+    background: rgba(63, 82, 255, 1);
+}
+
+span {
+    display: inline-block;
+    margin: 5px;
+}
+
+#classBox {
+    width: 100%;
+}
+
+#dfn2 {
+    display: none;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1000px) {
+    body {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #main {
+        flex-direction: column;
+    }
+    
+    #left {
+        width: 100%;
+    }
+
+    #right {
+        width: 100%;
+    }
+
+    #synonymBox {
+        margin-top: 0px;
+    }
+
+    #antonymBox {
+        margin-bottom: 50px;
+    }
+}
