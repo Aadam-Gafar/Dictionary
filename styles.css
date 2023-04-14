@@ -18,7 +18,7 @@ background: rgba(233, 235, 252, 1);
 }
 
 #search {
-    width: 750px;
+    width: 50%;
     background-color: rgba(247, 248, 255, 1);
     display: flex;
     justify-content: center;
@@ -168,5 +168,29 @@ span {
 
     #antonymBox {
         margin-bottom: 50px;
+    }
+
+    #search {
+        width: 90%;
+    }
+
+    #search img {
+        height: 1em;
+        width: auto;
+    }
+    
+    #search input {
+        height:1em;
+        font-size: 1em;
+        margin-left: 0px;
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #phonetics {
+        font-size: 1.25em;
     }
 }
