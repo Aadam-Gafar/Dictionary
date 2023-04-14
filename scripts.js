@@ -124,6 +124,11 @@ async function getDefinition(isDefault) {
         document.getElementById("antonym").innerHTML = html;
     } catch {
         // Accounting for failed requests
-        alert("404 (Not Found): no definition available.");
+        document.getElementById("word").innerHTML = "Ouch!";
+        document.getElementById("phonetics").innerHTML = "/ˈaʊtʃ/";
+        document.getElementById("definition").innerHTML = "No results found for: " + word;
+        document.getElementById("classBox").innerHTML = "";
+        document.getElementById("synonym").innerHTML = "";
+        document.getElementById("antonym").innerHTML = "";
     }
 }
