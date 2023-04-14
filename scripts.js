@@ -52,6 +52,14 @@ async function getDefinition() {
             html += "<li>" + definitions[i].definition + "</li>";
         }
         document.getElementById("definition").innerHTML = "<ul>" + html + "</ul>";
+
+        // Updating synonym HTML
+        var synonyms = parsedData[0].meanings[0].synonyms;
+        var html = "";
+        for (var i = 0; i < synonyms.length; i++) {
+            html += "<li>" + synonyms[i] + "</li>";
+        }
+        document.getElementById("synonym").innerHTML = "<ul>" + html + "</ul>";
     } catch {
         // Accounting for failed requests
         alert("404 (Not Found): no definition available.");
