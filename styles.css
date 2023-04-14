@@ -5,8 +5,8 @@ font-family: 'Work Sans', sans-serif;
 }
 
 body {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
     
 background: rgba(233, 235, 252, 1);
 }
@@ -144,3 +144,29 @@ span {
     display: none;
 }
 
+@media only screen and (min-width: 0px) and (max-width: 1000px) {
+    body {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #main {
+        flex-direction: column;
+    }
+    
+    #left {
+        width: 100%;
+    }
+
+    #right {
+        width: 100%;
+    }
+
+    #synonymBox {
+        margin-top: 0px;
+    }
+
+    #antonymBox {
+        margin-bottom: 50px;
+    }
+}
