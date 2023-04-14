@@ -18,10 +18,16 @@ async function getDefinition() {
         var jsonData = await response.json();
         var stringData = JSON.stringify(jsonData);
         var parsedData = JSON.parse(stringData);
+        console.log("Parsed data: " + parsedData);
 
         // Updating HTML
-        var definition = parsedData[0].meanings[0].definitions[0].definition;
-        document.getElementById("definition").innerHTML = definition;
+        var definitions = parsedData[0].meanings[0].definitions;
+        var html = "";
+        for (var i = 0; i < definitions.length; i++) {
+            console.log("Adding: " + definitions[i].definition);
+            html += "<li>" + definitions[i].definition + "</li>";
+        }
+        document.getElementById("definition").innerHTML = "<ul>" + html + "</ul>";
     } catch {
         // Accounting for failed requests
         alert("404 (Not Found): no definition available.");
