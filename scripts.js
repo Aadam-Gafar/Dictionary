@@ -40,6 +40,11 @@ async function getDefinition() {
         var html = phonetics;
         document.getElementById("phonetics").innerHTML = html;
 
+        // Updating class HTML
+        var wordClass = parsedData[0].meanings[0].partOfSpeech;
+        var html = wordClass;
+        document.getElementById("wordClass").innerHTML = html;
+
         // Updating definitions HTML
         var definitions = parsedData[0].meanings[0].definitions;
         var html = "";
