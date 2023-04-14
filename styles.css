@@ -2,6 +2,10 @@
 font-family: 'Work Sans', sans-serif;
 }
 
+body {
+    margin: 100px;
+}
+
 #titleBar {
     display: flex;
     justify-content: center;
@@ -42,4 +46,16 @@ font-family: 'Work Sans', sans-serif;
 
 #search input:focus {
     outline: none;
+}
+
+h1 {
+    font-size: 64px;
+    color: rgba(63, 82, 255, 1);
+    margin-bottom: 0px;
+}
+
+#phonetics {
+    font-size: 32px;
+    color: rgba(63, 82, 255, 1);
+    margin-top: 0px;
 }

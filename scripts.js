@@ -9,9 +9,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-async function getDefinition() {
+getDefinition(true);
+
+async function getDefinition(isDefault) {
     // Reading user input
-    var word = document.getElementById("entry").value;
+    var word = "";
+    if (isDefault) {
+        word = "dictionary";
+    }
+    else {
+        var word = document.getElementById("entry").value;
+    }
+
 
     // Accounting for non-entries
     if (word.length <= 0) {
