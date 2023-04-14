@@ -4,21 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     input.addEventListener("keydown", function (event) {
         if (event.code == "Enter") {
-            getDefinition();
+            getDefinition(false);
         }
     });
+
+    getDefinition(true);
+displayDefinition("", 0);
 });
 
-getDefinition(true);
-displayDefinition(1);
+
 
 function displayDefinition(originElement, number) {
-    console.log("saf");
-    console.log(originElement.length);
     number += 1;
     var allDefinitions = document.querySelectorAll('[id*="dfn"]');
     allDefinitions.forEach(element => {
-        if (element == document.getElementById("dfn" + number)) {
+        if (element.id == "dfn" + number) {
             element.style.display = "block";
         }
         else {
@@ -27,14 +27,21 @@ function displayDefinition(originElement, number) {
     });
 
     var allClasses = document.querySelectorAll('[class*="wordClass"');
+    
     allClasses.forEach(element => {
         if (element == originElement) {
+            console.log(element);
             element.id = "active";
         }
         else {
             element.id = "inactive";
         }
     });
+
+    if (originElement == "") {
+        allClasses[0].id = "active";
+    }
+    
 }
 
 
@@ -51,7 +58,6 @@ async function getDefinition(isDefault) {
 
     // Accounting for non-entries
     if (word.length <= 0) {
-        alert("Please enter a word.");
         return;
     }
 
@@ -121,6 +127,8 @@ async function getDefinition(isDefault) {
             html += "<span id='pill'>" + antonyms[i] + "</span>";
         }
         document.getElementById("antonym").innerHTML = html;
+
+        displayDefinition("", 0);
     } catch {
         // Accounting for failed requests
         document.getElementById("word").innerHTML = "Ouch!";
