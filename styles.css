@@ -59,3 +59,10 @@ h1 {
     color: rgba(63, 82, 255, 1);
     margin-top: 0px;
 }
+
+#wordClass {
+    background-color: aliceblue;
+    width: max-content;
+    padding: 10px;
+    border-radius: 15px;
+}
