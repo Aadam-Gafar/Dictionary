@@ -10,8 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 getDefinition(true);
+displayDefinition(1);
 
-function displayDefinition(number) {
+function displayDefinition(originElement, number) {
+    console.log("saf");
+    console.log(originElement.length);
     number += 1;
     var allDefinitions = document.querySelectorAll('[id*="dfn"]');
     allDefinitions.forEach(element => {
@@ -20,6 +23,16 @@ function displayDefinition(number) {
         }
         else {
             element.style.display = "none";
+        }
+    });
+
+    var allClasses = document.querySelectorAll('[class*="wordClass"');
+    allClasses.forEach(element => {
+        if (element == originElement) {
+            element.id = "active";
+        }
+        else {
+            element.id = "inactive";
         }
     });
 }
@@ -71,7 +84,13 @@ async function getDefinition(isDefault) {
         document.getElementById("classBox").innerHTML = "";
         for (var i = 0; i < meanings.length; i++) {
             wordClass = meanings[i].partOfSpeech;
-            html = "<span class='wordClass' onclick='displayDefinition(" + i + ");'>" + wordClass + "</span>";
+            if (i==0) {
+                html = "<span class='wordClass' onclick='displayDefinition(this, " + i + ");' id='active'>" + wordClass + "</span>";
+            }
+            else {
+                html = "<span class='wordClass' onclick='displayDefinition(this, " + i + ");'>" + wordClass + "</span>";
+            }
+            
             document.getElementById("classBox").innerHTML += html;
         }
 

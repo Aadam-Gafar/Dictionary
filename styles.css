@@ -69,11 +69,25 @@ h1 {
 }
 
 .wordClass {
+    opacity: 50%;
     background: rgba(247, 248, 255, 1);
     width: max-content;
     padding: 10px;
     border-radius: 15px;
     color: rgba(63, 82, 255, 1);
+}
+
+#inactive {
+    opacity: 50%;
+}
+
+#active {
+    opacity: 100%;
+}
+
+.wordClass:hover {
+    opacity: 100%;
+    cursor: pointer;
 }
 
 #main {
@@ -130,3 +144,4 @@ span {
 #dfn2 {
     display: none;
 }
+
