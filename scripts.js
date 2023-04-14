@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function () {
+    var input = document.getElementById("entry");
+    var button = document.getElementById("search");
+
+    input.addEventListener("keydown", function (event) {
+        if (event.code == "Enter") {
+            getDefinition();
+        }
+    });
+});
+
 async function getDefinition() {
     // Reading user input
     var word = document.getElementById("entry").value;
