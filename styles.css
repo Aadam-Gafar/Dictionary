@@ -144,6 +144,15 @@ span {
     display: none;
 }
 
+#footer {
+    text-align: center;
+    margin-top: 5%;
+    background-color: rgba(247, 248, 255, 1);
+    padding: 5px;
+    width: 100%;
+    border-radius: 15px;
+}
+
 @media only screen and (min-width: 0px) and (max-width: 1000px) {
     body {
         margin-left: 10%;
